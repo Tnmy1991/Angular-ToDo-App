@@ -1,0 +1,18 @@
+.form-group {
+  text-align: center;
+}
+
+input[type=text] {
+  width: 48%;
+  padding: 16px 20px;
+  margin: 8px 2px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  input[type=text] {
+    width: 75%;
+  }
+}

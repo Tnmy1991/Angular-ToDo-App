@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <label class="navbar-toggle" id="js-navbar-toggle" for="chkToggle">
+    <i class="fa fa-bars"></i>
+  </label>
+  <a href="/" class="logo">To-Do App</a>
+  <input type="checkbox" id="chkToggle" />
+  <ul class="main-nav" id="js-menu">
+    <li><a routerLink="" class="nav-links" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">App</a></li>
+    <li><a routerLink="/about" class="nav-links" routerLinkActive="active">About</a></li>
+  </ul>
+</nav>

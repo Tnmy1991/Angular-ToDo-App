@@ -1,0 +1,86 @@
+ul.todo-items {
+  list-style-type: none;
+  width: 54%;
+  margin: auto;
+  padding-left: 0px;
+}
+
+ul li {
+  position: relative;
+  padding: 15px 8px 12px 35px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  margin-bottom: 5px;
+  
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ul li span {
+  cursor: pointer;
+}
+
+.btn-delete-todo {
+  position: absolute;
+  right: 0;
+  top: -4px;
+}
+
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+ul li.completed-todo {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+ul li.active-todo::before {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  content: "\f111";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color:#decbcb;
+}
+
+ul li.completed-todo::before {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  content: "\f00c";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.btn-delete-todo:hover {
+  background-color: #f44336;
+}
+
+.btn-edit-todo {
+  display: inline;
+  float: right;
+  margin: -15px 50px;
+}
+
+.btn-delete-todo {
+  background-color: #c921219c;
+}
+
+@media screen and (max-width: 768px) {
+  ul.todo-items {
+    width: 86%;
+  }
+}

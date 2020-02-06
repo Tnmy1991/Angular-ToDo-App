@@ -1,0 +1,15 @@
+<div class="form-container">
+  <form (ngSubmit)="addTodo()" (keydown)="enterToSubmit($event)">
+    <div class="form-group">
+      <input type="text" [formControl]="addTodoHandler" placeholder="Enter some text ..." />
+      <button type="submit" [disabled]="addTodoHandler.invalid" class="btn btn-add-todo">
+        <i class="fa fa-plus icon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </form>
+  <div class="todo-list-items">
+    <ng-container *ngIf="todoItems">
+      <app-list [items]="todoItems"></app-list>
+    </ng-container>
+  </div>
+</div>

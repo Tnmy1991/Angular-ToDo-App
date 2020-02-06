@@ -1,0 +1,22 @@
+<ul class="todo-items">
+  <ng-template ngFor let-item [ngForOf]="items" let-i="index">
+    <li id="item-{{i}}" [ngClass]="{'active-todo': item.completed === false, 'completed-todo': item.completed === true }" [@EnterLeave]="'flyIn'">
+      <span (click)="toggleItem(i);">{{item.task}}</span>
+      <span *ngIf="editMode && i == editTab">
+        &nbsp;
+        <input [(ngModel)]="item.task" #ctrl="ngModel" required>
+        &nbsp;
+        <a href="javascript:void(0);" (click)="setValue(item, i)">
+          <i class="fa fa-save" aria-hidden="true"></i>
+        </a>
+      </span>
+      <span *ngIf="!editMode">
+        &nbsp;
+        <a href="javascript:void(0);" (click)="editItem(i);"><i class="fa fa-edit" aria-hidden="true"></i></a>
+      </span>
+      <button type="button" class="btn btn-delete-todo" (click)="removeItem(i);">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </button>
+    </li>
+  </ng-template>
+</ul>
